@@ -69,4 +69,22 @@ public class TripManagerTest {
 		assertEquals(1, results.size());
 		assertEquals(tripA, results.get(0));
 	}
+	
+	@Test
+	public void testFindByEmptyKeyword() throws TripAlreadyExistsException {
+		Photo photo = new Photo();
+		photo.setComment("alewidoki");
+		trip.addPhoto(photo);
+
+		Photo photoA = new Photo();
+		photoA.setComment("superwygladasz");
+		Trip tripA = new Trip("Bahamy dla mamy", "Mocne drinki w basenie");
+		tripA.addPhoto(photoA);
+
+		tripManager.add(trip);
+		tripManager.add(tripA);
+
+		List<Trip> results = tripManager.findTrip("");
+		assertEquals(2, results.size());
+	}	
 }
