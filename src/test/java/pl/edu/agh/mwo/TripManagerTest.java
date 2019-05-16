@@ -48,6 +48,10 @@ public class TripManagerTest {
 		tripManager.add(trip);
 		List<Trip> results = tripManager.findTrip("hawaje");
 		assertEquals(0, results.size());
+
+		// codecov
+		trip.setName("Test codecove");
+		trip.setDescription("Test codecove");
 	}
 
 	@Test
@@ -68,7 +72,7 @@ public class TripManagerTest {
 		List<Trip> results = tripManager.findTrip("superwygladasz");
 		assertEquals(1, results.size());
 		assertEquals(tripA, results.get(0));
-		
+
 		// codecov
 		trip.setName("Test codecove");
 		trip.setDescription("Test codecove");
@@ -79,6 +83,10 @@ public class TripManagerTest {
 		Photo photo = new Photo();
 		photo.setComment("alewidoki");
 		trip.addPhoto(photo);
+
+		// codecov
+		trip.setName("Test codecove");
+		trip.setDescription("Test codecove");
 
 		Photo photoA = new Photo();
 		photoA.setComment("superwygladasz");
