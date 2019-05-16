@@ -68,8 +68,10 @@ public class TripManagerTest {
 		List<Trip> results = tripManager.findTrip("superwygladasz");
 		assertEquals(1, results.size());
 		assertEquals(tripA, results.get(0));
+
+		trip.setDescription("Test codecove");
 	}
-	
+
 	@Test
 	public void testFindByEmptyKeyword() throws TripAlreadyExistsException {
 		Photo photo = new Photo();
