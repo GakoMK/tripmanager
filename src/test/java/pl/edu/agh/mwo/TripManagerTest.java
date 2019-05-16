@@ -49,4 +49,24 @@ public class TripManagerTest {
 		List<Trip> results = tripManager.findTrip("hawaje");
 		assertEquals(0, results.size());
 	}
+
+	@Test
+	public void testFindTripByComment() throws TripAlreadyExistsException {
+		Photo photo = new Photo();
+		photo.setComment("alewidoki");
+		trip.addPhoto(photo);
+
+		Photo photoA = new Photo();
+		photoA.setComment("superwygladasz");
+
+		Trip tripA = new Trip("Bahamy dla mamy", "Mocne drinki w basenie");
+		tripA.addPhoto(photoA);
+
+		tripManager.add(trip);
+		tripManager.add(tripA);
+
+		List<Trip> results = tripManager.findTrip("superwygladasz");
+		assertEquals(1, results.size());
+		assertEquals(tripA, results.get(0));
+	}
 }
