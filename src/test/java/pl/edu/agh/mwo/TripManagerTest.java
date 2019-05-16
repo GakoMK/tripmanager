@@ -68,7 +68,9 @@ public class TripManagerTest {
 		List<Trip> results = tripManager.findTrip("superwygladasz");
 		assertEquals(1, results.size());
 		assertEquals(tripA, results.get(0));
-
+		
+		// codecov
+		trip.setName("Test codecove");
 		trip.setDescription("Test codecove");
 	}
 
